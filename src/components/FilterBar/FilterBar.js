@@ -11,7 +11,14 @@ class FilterBar extends Component {
       criteria: '',
       category: 0,
     };
+    this.criteriaRef = React.createRef();
+    this.categoryRef = React.createRef();
   }
+
+  onSearch = () => {
+    const { criteria, category } = this.state;
+    this.props.onSearch({ criteria, category });
+  };
 
   renderCategories = () => {
     const { categories } = this.props;
@@ -32,19 +39,31 @@ class FilterBar extends Component {
             <Row>
               <Col xs="4">
                 <FormGroup>
-                  <Input type="text" className="rounded-0" name="searchText" placeholder="Criterio" />
+                  <Input
+                    onChange={e => this.setState({ criteria: e.target.value })}
+                    type="text"
+                    className="rounded-0"
+                    name="searchText"
+                    placeholder="Criterio"
+                  />
                 </FormGroup>
               </Col>
               <Col xs="4">
                 <FormGroup>
-                  <Input type="select" className="rounded-0" name="category" placeholder="Categoría">
+                  <Input
+                    onChange={e => this.setState({ category: e.target.value })}
+                    type="select"
+                    className="rounded-0"
+                    name="category"
+                    placeholder="Categoría"
+                  >
                     <option value={0}>Categoría</option>
                     {this.renderCategories()}
                   </Input>
                 </FormGroup>
               </Col>
               <Col xs="4">
-                <Button color="primary" className={styles.buttonSearch} block>
+                <Button color="primary" onClick={this.onSearch} className={styles.buttonSearch} block>
                   BUSCAR
                 </Button>
               </Col>

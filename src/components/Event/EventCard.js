@@ -4,22 +4,24 @@ import PropTypes from 'prop-types';
 
 class EventCard extends Component {
   render() {
+    let { text, title, image, url } = this.props;
+
+    if (text) {
+      if (text.length > 250) {
+        text = text.substr(0, 250);
+      }
+    }
     return (
       <div>
         <Card className="rounded-0">
-          <CardImg
-            top
-            width="100%"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-            alt="Card image cap"
-          />
+          {image !== null ? <CardImg top width="100%" src={image.url} alt={title} className="rounded-0" /> : ''}
           <CardBody>
-            <CardTitle>Título del evento</CardTitle>
+            <CardTitle>{this.props.title}</CardTitle>
             <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ut facere ea facilis, culpa vitae,
-              temporibus hic suscipit iste commodi inventore doloribus possimus velit ab in porro! Dolores, fugit sed!
+              {text}
+              ...
             </CardText>
-            <a className="btn btn-info btn-block" href="http://stivencastillo.com" target="_bkank">
+            <a className="btn btn-info btn-block" href={url} target="_bkank">
               MÁS INFORMACIÓN
             </a>
           </CardBody>
