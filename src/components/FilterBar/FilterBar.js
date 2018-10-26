@@ -4,8 +4,23 @@ import { Container, Row, Col, Button, Form, FormGroup, Input } from 'reactstrap'
 import PropTypes from 'prop-types';
 
 class FilterBar extends Component {
-  onSearch = () => {
-    console.log('Buscar');
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      criteria: '',
+      category: 0,
+    };
+  }
+
+  renderCategories = () => {
+    const { categories } = this.props;
+
+    return categories.map(category => (
+      <option key={category.id} value={category.id}>
+        {category.name_localized}
+      </option>
+    ));
   };
 
   render() {
@@ -17,19 +32,19 @@ class FilterBar extends Component {
             <Row>
               <Col xs="4">
                 <FormGroup>
-                  <Input type="text" className="rounded-0" name="criteria" placeholder="Criterio" />
+                  <Input type="text" className="rounded-0" name="searchText" placeholder="Criterio" />
                 </FormGroup>
               </Col>
               <Col xs="4">
                 <FormGroup>
                   <Input type="select" className="rounded-0" name="category" placeholder="Categoría">
                     <option value={0}>Categoría</option>
-                    <option value={2}>Categoría 2</option>
+                    {this.renderCategories()}
                   </Input>
                 </FormGroup>
               </Col>
               <Col xs="4">
-                <Button onClick={this.onSearch} className={styles.buttonSearch} block>
+                <Button color="primary" className={styles.buttonSearch} block>
                   BUSCAR
                 </Button>
               </Col>

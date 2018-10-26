@@ -9,23 +9,23 @@ class EventList extends Component {
       <div>
         <Row>
           <Col xs="4" className="mb-4">
-            <EventCard />
+            <EventCard title="Nombre del evento" text="texto del evento" />
           </Col>
 
           <Col xs="4" className="mb-4">
-            <EventCard />
+            <EventCard title="Nombre del evento" text="texto del evento" />
           </Col>
 
           <Col xs="4" className="mb-4">
-            <EventCard />
+            <EventCard title="Nombre del evento" text="texto del evento" />
           </Col>
 
           <Col xs="4" className="mb-4">
-            <EventCard />
+            <EventCard title="Nombre del evento" text="texto del evento" />
           </Col>
 
           <Col xs="4" className="mb-4">
-            <EventCard />
+            <EventCard title="Nombre del evento" text="texto del evento" />
           </Col>
         </Row>
       </div>
