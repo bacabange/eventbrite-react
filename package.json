@@ -1,7 +1,7 @@
 {
   "name": "eventbrite-react",
   "version": "0.1.0",
-  "homepage": "https://bacabange.github.io/eventbrite-react/",
+  "homepage": "http://bacabange.github.io/eventbrite-react",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
