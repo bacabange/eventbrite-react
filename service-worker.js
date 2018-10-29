@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bacabange/eventbrite-react/precache-manifest.2bce81e3fc28a13f0f274b83aee96cb3.js"
+  "/eventbrite-react/precache-manifest.da95e5d24bcdc435ac6864d758f68082.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/bacabange/eventbrite-react/index.html", {
+workbox.routing.registerNavigationRoute("/eventbrite-react/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
